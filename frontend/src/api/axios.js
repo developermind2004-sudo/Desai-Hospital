@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-// Base URL from Vite env (define VITE_BACKEND_URL in .env.local)
 const baseURL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000';
 
 export const api = axios.create({
