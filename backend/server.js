@@ -12,15 +12,8 @@ import userRouter from "./routes/userRoute.js";
 
 // app config
 const app = express();
-const port = process.env.PORT || 4000;
-
-const start = async () => {
-  await connectDB();
-  connectCloudinary();
-  // await seedDoctorsIfEmpty();
-
-  app.listen(port, () => console.log("Server started", port));
-};
+const PORT = process.env.PORT || 4000;
+const HOST = "0.0.0.0";
 
 // middlewares
 app.use(express.json());
@@ -37,5 +30,16 @@ app.use("/api", reportRouter);
 app.get("/", (req, res) => {
   res.send("API WORKING");
 });
+
+const start = async () => {
+  try {
+    await connectDB();
+    connectCloudinary();
+    app.listen(PORT, HOST, () => console.log(`Server running on port ${PORT}`));
+  } catch (error) {
+    console.error("Failed to start server:", error);
+    process.exit(1);
+  }
+};
 
 start();
