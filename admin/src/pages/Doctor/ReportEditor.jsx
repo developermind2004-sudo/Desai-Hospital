@@ -20,6 +20,8 @@ const ReportEditor = () => {
   const [appointmentData, setAppointmentData] = useState({});
   const [reports, setReports] = useState([]);
   const [editableReport, setEditableReport] = useState(null);
+  const [canCreateReport, setCanCreateReport] = useState(false);
+  const [isCreatingNewReport, setIsCreatingNewReport] = useState(false);
   
   // Version selection state
   const [selectedReport, setSelectedReport] = useState(null);
@@ -39,6 +41,7 @@ const ReportEditor = () => {
         setAppointmentData(data.appointmentData || {});
         setReports(data.reports || []);
         setEditableReport(data.editableReport);
+        setCanCreateReport(Boolean(data.canCreateReport));
         
         // Set initial selected report and version
         const allReports = data.reports || [];
@@ -46,6 +49,11 @@ const ReportEditor = () => {
           const firstReport = data.editableReport || allReports[0];
           setSelectedReport(firstReport);
           setSelectedVersionIndex(firstReport.versions?.length - 1 || 0);
+          setIsCreatingNewReport(false);
+        } else {
+          setSelectedReport(null);
+          setSelectedVersionIndex(0);
+          setIsCreatingNewReport(true);
         }
       } else {
         toast.error(data.message);
@@ -61,6 +69,16 @@ const ReportEditor = () => {
   const handleReportSelect = (report) => {
     setSelectedReport(report);
     setSelectedVersionIndex(report.versions?.length - 1 || 0);
+    setIsCreatingNewReport(false);
+  };
+
+  const handleStartCreateReport = () => {
+    if (!canCreateReport) return;
+    setSelectedReport(null);
+    setSelectedVersionIndex(0);
+    setStatus({ bp: '', sugar: '', bmi: '' });
+    setDescription('');
+    setIsCreatingNewReport(true);
   };
 
   // Handle version selection
@@ -164,6 +182,7 @@ const ReportEditor = () => {
         if (data.success) {
           toast.success('Report created successfully');
           await loadReportData(); // Refresh data
+          setIsCreatingNewReport(false);
           setStatus({ bp: '', sugar: '', bmi: '' });
           setDescription('');
         } else {
@@ -282,13 +301,27 @@ const ReportEditor = () => {
                   </div>
                 );
               })}
+
+              {canCreateReport && (
+                <button
+                  type="button"
+                  onClick={handleStartCreateReport}
+                  className={`w-full mt-2 px-4 py-2 rounded-lg border text-sm font-medium transition-colors ${
+                    isCreatingNewReport
+                      ? 'border-blue-500 bg-blue-50 text-blue-700'
+                      : 'border-blue-200 text-blue-700 hover:bg-blue-50'
+                  }`}
+                >
+                  + Create My Report
+                </button>
+              )}
             </div>
           )}
         </div>
 
         {/* Report Details */}
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          {selectedReport ? (
+          {selectedReport && !isCreatingNewReport ? (
             <div className="p-8">
               <div className="mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <h2 className="text-xl font-semibold text-gray-900">
@@ -339,7 +372,7 @@ const ReportEditor = () => {
                 />
               </div>
             </div>
-          ) : reports.length === 0 ? (
+          ) : isCreatingNewReport || reports.length === 0 ? (
             <div className="p-8 text-center">
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">

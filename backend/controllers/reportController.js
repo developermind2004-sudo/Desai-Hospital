@@ -19,6 +19,18 @@ const createReport = async (req, res) => {
       return res.json({ success: false, message: "Invalid appointment/patient" });
     }
 
+    const existingDoctorPatientReport = await reportModel.findOne({
+      patientId,
+      doctorId: profileId,
+    });
+
+    if (existingDoctorPatientReport) {
+      return res.json({
+        success: false,
+        message: "You already created a report for this patient. Please edit your existing report.",
+      });
+    }
+
     const report = await reportModel.create({
       patientId,
       doctorId: profileId,
@@ -47,12 +59,15 @@ const updateReport = async (req, res) => {
     }
 
     const { id } = req.params;
-    const { status = {}, description = "" } = req.body;
+    const { status = {}, description = "", patientId } = req.body;
 
     const report = await reportModel.findById(id);
     if (!report) return res.json({ success: false, message: "Report not found" });
     if (String(report.doctorId) !== String(profileId)) {
       return res.json({ success: false, message: "Not allowed" });
+    }
+    if (patientId && String(report.patientId) !== String(patientId)) {
+      return res.json({ success: false, message: "Not allowed for this patient" });
     }
 
     const nextVersion = (report.versions.at(-1)?.version || 0) + 1;
@@ -152,13 +167,16 @@ const getReportForEditing = async (req, res) => {
       }
     }
     
+    const canCreateReport = profileRole === 'doctor' && !editableReport;
+
     return res.json({ 
       success: true, 
       appointmentData,
       patientData,
       doctorData,
       reports,
-      editableReport
+      editableReport,
+      canCreateReport
     });
   } catch (error) {
     return res.json({ success: false, message: error.message });
