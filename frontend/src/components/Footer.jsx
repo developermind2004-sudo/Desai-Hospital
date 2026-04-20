@@ -9,10 +9,10 @@ const Footer = () => {
         <div>
           <img className="mb-5 w-40" src={assets.logo} alt="" />
           <p className="w-full md:w-2/3 text-gray-600 leading-6">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
+            Desai Hospital has been serving Gargoti and nearby communities with
+            trusted, affordable, and patient-focused healthcare. Our doctors and
+            staff are committed to providing quality treatment with compassion,
+            modern facilities, and timely care for every family.
           </p>
         </div>
 
@@ -31,8 +31,8 @@ const Footer = () => {
         <div>
           <p className="text-xl font-medium mb-5">GET IN TOUCH</p>
           <ul className="flex flex-col gap-2 text-gray-600">
-            <li>+250-784-652-570</li>
-            <li>xyz@gmail.com</li>
+            <li>+91 8805799055</li>
+            <li>desaihospital99055@gmail.com</li>
           </ul>
         </div>
       </div>

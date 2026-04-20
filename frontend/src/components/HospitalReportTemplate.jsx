@@ -48,7 +48,7 @@ const HospitalReportTemplate = ({
             <div>
               <h1 className="text-xl lg:text-2xl font-bold text-gray-900">Desai Hospital</h1>
               <p className="text-xs lg:text-sm text-gray-600">1st floor, Sayaji Business Park, Gargoti</p>
-              <p className="text-xs lg:text-sm text-gray-600">Phone: (555) 123-4567 | Email: info@cliniclink.com</p>
+              <p className="text-xs lg:text-sm text-gray-600">Phone: +91 8805799055 | Email: desaihospital99055@gmail.com</p>
             </div>
           </div>
           <div className="text-left lg:text-right">

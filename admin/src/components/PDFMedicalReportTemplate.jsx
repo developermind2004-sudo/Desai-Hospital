@@ -105,8 +105,8 @@ const PDFMedicalReportTemplate = ({
               <p className="text-xs lg:text-sm text-gray-600">
                 1st floor, Sayaji Business Park, Gargoti
               </p>
-              <p className="text-xs lg:text-sm text-gray-600">
-                Phone: (555) 123-4567 | Email: info@cliniclink.com
+                      <p className="text-xs lg:text-sm text-gray-600">
+                        Phone: +91 8805799055 | Email: desaihospital99055@gmail.com
               </p>
             </div>
           </div>

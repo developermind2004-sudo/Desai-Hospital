@@ -5,22 +5,22 @@ import "dotenv/config";
 
 const doctors = [
   {
-    name: "Dr. Sarah Johnson",
-    email: "sarah@doctor.com",
+    name: "Dr. Aditi Deshmukh",
+    email: "aditi@doctor.com",
     password: "doctor123",
-    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop&crop=face",
+    image: "https://thumbs.dreamstime.com/b/young-indian-female-doctor-showing-thumbs-up-white-background-62407006.jpg",
     speciality: "Cardiologist",
     degree: "MD, DM Cardiology",
     experience: "15 years",
-    about: "Experienced cardiologist specializing in heart disease treatment and prevention.",
+    about: "Experienced cardiologist specializing in preventive heart care and long-term cardiac management.",
     fees: 1500,
     address: { line1: "Apollo Hospital", city: "Mumbai", state: "Maharashtra" },
     date: Date.now(),
     slots_booked: {}
   },
   {
-    name: "Dr. Michael Chen",
-    email: "michael@doctor.com",
+    name: "Dr. Rohan Kulkarni",
+    email: "rohan@doctor.com",
     password: "doctor123",
     image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop&crop=face",
     speciality: "Neurologist",
@@ -33,66 +33,10 @@ const doctors = [
     slots_booked: {}
   },
   {
-    name: "Dr. Emily Watson",
-    email: "emily@doctor.com",
-    password: "doctor123",
-    image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=400&fit=crop&crop=face",
-    speciality: "Pediatrician",
-    degree: "MD, DCH",
-    experience: "10 years",
-    about: "Dedicated pediatrician with expertise in child healthcare.",
-    fees: 1000,
-    address: { line1: "Cloudnine Hospital", city: "Bangalore", state: "Karnataka" },
-    date: Date.now(),
-    slots_booked: {}
-  },
-  {
-    name: "Dr. Raj Patel",
-    email: "raj@doctor.com",
-    password: "doctor123",
-    image: "https://images.unsplash.com/photo-1618498082410-b4aa22193b38?w=400&h=400&fit=crop&crop=face",
-    speciality: "Orthopedic",
-    degree: "MS, DNB Ortho",
-    experience: "18 years",
-    about: "Expert in orthopedic surgeries and joint replacements.",
-    fees: 2000,
-    address: { line1: "Saibaba Hospital", city: "Pune", state: "Maharashtra" },
-    date: Date.now(),
-    slots_booked: {}
-  },
-  {
-    name: "Dr. Lisa Anderson",
-    email: "lisa@doctor.com",
-    password: "doctor123",
-    image: "https://images.unsplash.com/photo-1643297654416-053af2a66c7c?w=400&h=400&fit=crop&crop=face",
-    speciality: "Dermatologist",
-    degree: "MD, DDVL",
-    experience: "8 years",
-    about: "Skin specialist treating various dermatological conditions.",
-    fees: 1200,
-    address: { line1: "Manipal Hospital", city: "Hyderabad", state: "Telangana" },
-    date: Date.now(),
-    slots_booked: {}
-  },
-  {
-    name: "Dr. James Wilson",
-    email: "james@doctor.com",
-    password: "doctor123",
-    image: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=400&h=400&fit=crop&crop=face",
-    speciality: "General Physician",
-    degree: "MD, MBBS",
-    experience: "20 years",
-    about: "Experienced general physician for all common ailments.",
-    fees: 800,
-    address: { line1: "City Hospital", city: "Chennai", state: "Tamil Nadu" },
-    date: Date.now(),
-    slots_booked: {}
-  },
-  {
     name: "Dr. Priya Sharma",
     email: "priya@doctor.com",
     password: "doctor123",
-    image: "https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?w=400&h=400&fit=crop&crop=face",
+    image: "https://images.unsplash.com/photo-1659353888906-adb3e0041693?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     speciality: "Gynecologist",
     degree: "MD, DGO",
     experience: "14 years",
@@ -103,44 +47,30 @@ const doctors = [
     slots_booked: {}
   },
   {
-    name: "Dr. Ankit Gupta",
-    email: "ankit@doctor.com",
+    name: "Dr. Neha Joshi",
+    email: "neha@doctor.com",
     password: "doctor123",
-    image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=400&fit=crop&crop=face",
-    speciality: "ENT Specialist",
-    degree: "MS, DLO",
-    experience: "11 years",
-    about: "Expert in ear, nose, and throat disorders.",
-    fees: 1100,
-    address: { line1: "Aster Hospital", city: "Kochi", state: "Kerala" },
+    image: "https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?w=400&h=400&fit=crop&crop=face",
+    speciality: "Dermatologist",
+    degree: "MD, DDVL",
+    experience: "8 years",
+    about: "Skin specialist treating various dermatological conditions.",
+    fees: 1200,
+    address: { line1: "Manipal Hospital", city: "Hyderabad", state: "Telangana" },
     date: Date.now(),
     slots_booked: {}
   },
   {
-    name: "Dr. Maria Garcia",
-    email: "maria@doctor.com",
+    name: "Dr. Suresh Naik",
+    email: "suresh@doctor.com",
     password: "doctor123",
-    image: "https://images.unsplash.com/photo-1527613426441-4da17471b66d?w=400&h=400&fit=crop&crop=face",
-    speciality: "Psychiatrist",
-    degree: "MD, DPM",
-    experience: "9 years",
-    about: "Mental health specialist treating anxiety and depression.",
-    fees: 1600,
-    address: { line1: "Mind Care Hospital", city: "Mumbai", state: "Maharashtra" },
-    date: Date.now(),
-    slots_booked: {}
-  },
-  {
-    name: "Dr. David Kumar",
-    email: "david@doctor.com",
-    password: "doctor123",
-    image: "https://images.unsplash.com/photo-1666214280557-f1b5022eb634?w=400&h=400&fit=crop&crop=face",
-    speciality: "Ophthalmologist",
-    degree: "MS, DOMS",
-    experience: "16 years",
-    about: "Eye specialist for all vision problems and surgeries.",
-    fees: 1400,
-    address: { line1: "Aravind Eye Hospital", city: "Coimbatore", state: "Tamil Nadu" },
+    image: "https://plus.unsplash.com/premium_photo-1661699704375-847063f963c6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    speciality: "General Physician",
+    degree: "MD, MBBS",
+    experience: "20 years",
+    about: "Experienced general physician for all common ailments.",
+    fees: 800,
+    address: { line1: "City Hospital", city: "Chennai", state: "Tamil Nadu" },
     date: Date.now(),
     slots_booked: {}
   }
@@ -163,7 +93,7 @@ const seedDoctors = async () => {
     console.log("Cleared existing doctors");
 
     await doctorModel.insertMany(hashedDoctors);
-    console.log("Seeded 10 doctors successfully");
+    console.log("Seeded 5 doctors successfully");
 
     process.exit();
   } catch (error) {

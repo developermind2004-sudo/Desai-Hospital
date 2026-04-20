@@ -219,7 +219,7 @@ const createPDFReportHTML = ({
           <div>
             <h1 style="font-size: 24px; font-weight: bold; color: #111827; margin: 0 0 4px 0;">Desai Hospital</h1>
             <p style="font-size: 14px; color: #374151; margin: 0;">1st floor, Sayaji Business Park, Gargoti</p>
-            <p style="font-size: 14px; color: #374151; margin: 0;">Phone: (555) 123-4567 | Email: info@cliniclink.com</p>
+            <p style="font-size: 14px; color: #374151; margin: 0;">Phone: +91 8805799055 | Email: desaihospital99055@gmail.com</p>
           </div>
         </div>
         <div style="text-align: right;">

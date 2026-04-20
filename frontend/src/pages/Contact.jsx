@@ -24,7 +24,7 @@ const Contact = () => {
              Tal: Bhudargad, District: Kolhapur
           </p>
           <p className="text-gray-500">
-            Tel: +12345689 <br /> Email: xyz@gmail.com
+            Tel: +91 8805799055 <br /> Email: desaihospital99055@gmail.com
           </p>
           <p className="font-semibold text-lg text-gray-600 uppercase">
             CAREERS AT Desai&apos;s Hospital
